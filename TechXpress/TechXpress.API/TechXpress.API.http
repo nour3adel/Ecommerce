@@ -1,0 +1,6 @@
+@TechXpress.API_HostAddress = http://localhost:5189
+
+GET {{TechXpress.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
