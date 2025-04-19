@@ -1,4 +1,5 @@
 using TechXpress.Data;
+using TechXpress.Services; 
 
 namespace TechXpress.API
 {
@@ -17,6 +18,7 @@ namespace TechXpress.API
 
 
             builder.Services.AddDataAccessServices(builder.Configuration);
+            builder.Services.AddServicesLayer();
 
             var app = builder.Build();
 
