@@ -13,6 +13,7 @@ namespace TechXpress.Services
     {
         public static IServiceCollection AddServicesLayer(this IServiceCollection services)
         {
+            services.AddScoped<IAccountService, AccountService>();
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<ICategoryService, CategoryService>();
             services.AddScoped<IOrderService, OrderService>();

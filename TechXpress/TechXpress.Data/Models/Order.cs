@@ -8,12 +8,27 @@ namespace TechXpress.Data.Models
 {
     public class Order
     {
-    }
+        public int Id { get; set; }
+        
+        public DateTime CreatedDate { get; set; }
 
-    public enum OrderStatus : byte
-    {
-        pending =1,
-        placed,
+        public DateTime UpdatedDate { get; set; }
 
-    }
+        public string Status { get; set; }
+
+        public string UserId { get; set; }
+
+        public virtual AppUser User { get; set; }
+
+
+        
+
+    }   
+
+    //public enum OrderStatus : byte
+    //{
+    //    pending =1,
+    //    placed,
+
+    //}
 }

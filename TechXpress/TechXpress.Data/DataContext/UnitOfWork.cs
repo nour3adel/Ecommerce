@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using TechXpress.Data.Contracts;
+using TechXpress.Data.Models;
 using TechXpress.Data.Repositories;
 
 namespace TechXpress.Data.DataContext
@@ -12,6 +14,8 @@ namespace TechXpress.Data.DataContext
     {
         private readonly TechXpressDbContext _context;
 
+        private readonly UserManager<AppUser> _userManager;
+
         private readonly Lazy<IProductRepository> _products;
 
         private readonly Lazy<ICategoryRepository> _categories;
@@ -19,8 +23,9 @@ namespace TechXpress.Data.DataContext
         private readonly Lazy<IOrderRepository> _orders;
 
 
-        public UnitOfWork(TechXpressDbContext context) {
+        public UnitOfWork(TechXpressDbContext context,UserManager<AppUser> userManager) {
             _context = context;
+            _userManager = userManager;
             _products = new Lazy<IProductRepository>(new ProductRepository(_context));
             _categories = new Lazy<ICategoryRepository>(new CategoryRepository(_context));
             _orders = new Lazy<IOrderRepository>(new OrderRepository(_context));
@@ -33,7 +38,7 @@ namespace TechXpress.Data.DataContext
 
         public IOrderRepository Orders => _orders.Value;
 
-        
+        public UserManager<AppUser> UserManager => _userManager;
 
         public void SaveChanges()
         {
