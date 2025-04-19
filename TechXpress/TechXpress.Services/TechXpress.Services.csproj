@@ -10,4 +10,10 @@
     <ProjectReference Include="..\TechXpress.Data\TechXpress.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Contracts\" />
+    <Folder Include="DTOs\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>

@@ -1,3 +1,4 @@
+using TechXpress.Data;
 
 namespace TechXpress.API
 {
@@ -13,6 +14,9 @@ namespace TechXpress.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+
+            builder.Services.AddDataAccessServices(builder.Configuration);
 
             var app = builder.Build();
 
