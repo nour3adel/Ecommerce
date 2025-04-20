@@ -19,5 +19,9 @@ namespace TechXpress.Data.DataContext
         public DbSet<Product> Products { get; set; }
 
         public DbSet<Order> Orders { get; set; }
+
+        public DbSet<AppUser> AppUsers { get; set; }
+
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
     }
 }

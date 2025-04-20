@@ -19,6 +19,8 @@ namespace TechXpress.Data.Contracts
 
         IOrderRepository Orders { get; }
 
+        IShoppingCartRepository ShoppingCarts { get; }
+
         void SaveChanges();
     }
 }

@@ -6,12 +6,14 @@ using System.Threading.Tasks;
 
 namespace TechXpress.Data.Models
 {
-    public class Category
+    public class ShoppingCart
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
 
-        public IEnumerable<Product> Products { get; set; }
+        public string UserId { get; set; }
+
+        public AppUser User { get; set; }
+
+        public IEnumerable<CartItem> CartItems { get; set; }
     }
 }

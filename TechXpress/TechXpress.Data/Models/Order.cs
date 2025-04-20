@@ -12,23 +12,26 @@ namespace TechXpress.Data.Models
         
         public DateTime CreatedDate { get; set; }
 
-        public DateTime UpdatedDate { get; set; }
-
+        public decimal TotalPrice { get; set; }
         public string Status { get; set; }
 
         public string UserId { get; set; }
 
-        public virtual AppUser User { get; set; }
+        public AppUser User { get; set; }  // virtual ??
+
+        public IEnumerable<OrderItem> OrderItems { get; set; }
+
+
 
 
         
 
-    }   
+    }
 
-    //public enum OrderStatus : byte
+    //public enum OrderStatus
     //{
-    //    pending =1,
-    //    placed,
-
+    //    Pending,    // 0
+    //    Shipped,    // 1
+    //    Delivered   // 2
     //}
 }
