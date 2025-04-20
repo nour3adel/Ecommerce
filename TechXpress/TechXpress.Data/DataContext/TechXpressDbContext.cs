@@ -25,3 +25,4 @@ namespace TechXpress.Data.DataContext
         public DbSet<ShoppingCart> ShoppingCarts { get; set; }
     }
 }
+ 

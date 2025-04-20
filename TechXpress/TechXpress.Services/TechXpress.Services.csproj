@@ -10,4 +10,8 @@
     <ProjectReference Include="..\TechXpress.Data\TechXpress.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="DTOs\ShoppingCartDtos\" />
+  </ItemGroup>
+
 </Project>

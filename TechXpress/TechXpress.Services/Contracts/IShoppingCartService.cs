@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using TechXpress.Data.Models;
 
-namespace TechXpress.Data.Contracts
+namespace TechXpress.Services.Contracts
 {
-    public interface ICategoryRepository :IRepositoryBase<Category>
+    public interface IShoppingCartService
     {
     }
 }
