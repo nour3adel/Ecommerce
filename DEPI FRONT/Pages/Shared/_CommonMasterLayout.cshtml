@@ -1,0 +1,45 @@
+@inject IHttpContextAccessor httpContextAccessor
+
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A fully responsive premium admin dashboard template" />
+    <meta name="author" content="Techzaa" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    @{
+        string title = ViewData["title"] as string ?? "";
+        string appName = TempData.Peek("appName") as string ?? "";
+        string productPage = TempData.Peek("productPage") as string ?? "";
+    }
+    <title>@title | @appName - Asp.Net Core MVC Free Admin Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="~/images/favicon.ico" />
+
+    <!-- Core Styles -->
+    @await Html.PartialAsync("Sections/_Styles")
+
+    <!-- Page Styles -->
+    @if (IsSectionDefined("PageStyles"))
+    {
+        @RenderSection("PageStyles")
+    }
+
+    <!-- Include Scripts for customizer, helper, analytics, config -->
+    @await Html.PartialAsync("Sections/_ScriptsIncludes")
+</head>
+
+<body class="h-100">
+    <!-- Layout Content -->
+    @RenderBody()
+    <!--/ Layout Content -->
+    <!-- Core Scripts -->
+    @await Html.PartialAsync("Sections/_Scripts")
+  
+</body>
+
+</html>

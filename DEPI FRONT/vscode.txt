@@ -1,0 +1,483 @@
+{
+    // Jupyter Settings
+    "jupyter.askForKernelRestart": false,
+    // Explorer Settings
+    "explorer.confirmDragAndDrop": false,
+    "explorer.sortOrder": "type",
+    "explorer.confirmDelete": false,
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/.vs": true,
+        "**/.vscode": true,
+        "**/.git": true,
+        "**/.svn": false,
+        "**/.hg": false,
+        "**/CVS": false,
+        "**/.DS_Store": false,
+        "**/Thumbs.db": false,
+        "**/node_modules": false,
+        "**/.next": false,
+        "**/.husky": false,
+        "**/drizzle": false,
+        "**/dist": false,
+        "**/.todo.md": false,
+        "**/.eslintrc.cjs": false,
+        "**/.editorconfig": false,
+        "**/.gitignore": false,
+        "**/.lintstagedrc.mjs": false,
+        "**/.markdownlint.json": false,
+        "**/.markdownlintignore": false,
+        "**/.prettierignore": false,
+        "**/bun.lockb": false,
+        "**/cspell.json": false,
+        "**/package-lock.json": false,
+        "**/pnpm-lock.yaml": false,
+        "**/next-env.d.ts": false,
+        "**/postcss.config.cjs": false,
+        "**/prettier.config.js": false,
+        "**/README.md": false,
+        "**/next.config.js": false,
+        "**/tailwind.config.ts": false,
+        "**/drizzle.config.ts": false,
+        "**/migrate.ts": false,
+        "**/.env.example": false
+    },
+    // Editor Settings
+    "editor.minimap.enabled": false,
+    "editor.fontFamily": "Geist Mono, JetBrains Mono, Fira Code",
+    "editor.fontLigatures": "'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'ss07', 'ss08', 'calt', 'dlig'",
+    "editor.hover.enabled": true,
+    "editor.hover.delay": 300,
+    "editor.lineNumbers": "on",
+    "editor.guides.indentation": false,
+    "editor.cursorBlinking": "expand",
+    "editor.find.cursorMoveOnType": false,
+    "editor.renderLineHighlight": "all",
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.wordWrapColumn": 120,
+    "editor.quickSuggestionsDelay": 200,
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    // Enable parameter hints
+    "editor.parameterHints.enabled": true,
+    // Enable snippet suggestions
+    "editor.snippetSuggestions": "inline",
+    // Enable suggestion on commit characters
+    "editor.suggestOnTriggerCharacters": true,
+    // Show suggestions in a separate pane
+    "editor.suggestSelection": "first",
+    // Make sure to enable C# formatting
+    "csharp.format.enable": true,
+    "omnisharp.autoStart": true, // Automatically start OmniSharp
+    "omnisharp.useModernNet": true, // Use the latest version of .NET for better compatibility
+    "omnisharp.enableAsyncCompletion": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true, // Format while typing
+    "editor.formatOnPaste": true,
+    "editor.suggestFontSize": 14,
+    "editor.suggestLineHeight": 22,
+    "editor.wordSeparators": "`~!@#%^&*()=+[{]}\\|;:'\",.<>/?",
+    "editor.selectionHighlight": true,
+    "editor.accessibilitySupport": "auto",
+    "editor.matchBrackets": "never",
+    "editor.overviewRulerBorder": false,
+    // Notebook Settings
+    "notebook.output.textLineLimit": 70,
+    "notebook.output.wordWrap": true,
+    // Terminal Settings
+    "terminal.integrated.fontSize": 14,
+    "terminal.integrated.lineHeight": 1,
+    "terminal.integrated.env.windows": {},
+    // Git Settings
+    "git.enableSmartCommit": true,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "git.decorations.enabled": true,
+    "git.allowForcePush": true,
+    "git.openRepositoryInParentFolders": "never",
+    "git.suggestSmartCommit": true,
+    "git.postCommitCommand": "none",
+    "git.enableCommitSigning": true,
+    // Optional: Ignore certain files and folders
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/refs/**": true,
+        "**/.gitignore": true
+    },
+    // Optional: Color Customization for Git
+    "workbench.colorCustomizations": {
+        "gitDecoration.addedResourceForeground": "#7CFC00", // Color for added files
+        "gitDecoration.modifiedResourceForeground": "#ffae00ec", // Color for modified files
+        "gitDecoration.deletedResourceForeground": "#FF4500", // Color for deleted files
+        "gitDecoration.ignoredResourceForeground": "#C0C0C0", // Color for ignored files
+        "titleBar.activeForeground": "#fff",
+        "titleBar.inactiveForeground": "#fff",
+        "titleBar.activeBackground": "#000",
+        "titleBar.inactiveBackground": "#000"
+    },
+    // Prettier Settings
+    "prettier.requireConfig": true,
+    "prettier.useEditorConfig": true,
+    "prettier.tabWidth": 4,
+    "workbench.tips.enabled": true,
+    "workbench.layoutControl.enabled": false,
+    "workbench.editor.editorActionsLocation": "titleBar",
+    "workbench.editor.tabActionUnpinVisibility": false,
+    "window.title": "⚡",
+    "window.newWindowProfile": "Backend (.Net)",
+    "window.density.editorTabHeight": "compact",
+    // Editor Token Color Customizations
+    "editor.tokenColorCustomizations": {
+        "[Atom One Dark]": {
+            "comments": "#d4922f"
+        },
+        "[Default Dark Modern]": {
+            "comments": "#d8dbd9b6"
+        },
+        "[Anysphere dark greener]": {
+            "comments": "#d8dbd9b6"
+        },
+        "[One Dark Pro Monokai Darker]": {
+            "comments": "#d8dbd9b6"
+        }
+    },
+    // Regions
+    "coloredRegions.namedColors": {
+        "Black": "rgba(0, 0, 0, 0.5)",
+        "White": "rgba(255, 255, 255, 0.2)",
+        "Red": "rgba(255, 0, 0, 0.4)",
+        "Green": "rgba(0, 128, 0, 0.4)",
+        "Blue": "rgba(0, 0, 255, 0.4)",
+        "Yellow": "rgba(255, 255, 0, 0.4)",
+        "Cyan": "rgba(0, 255, 255, 0.4)",
+        "Magenta": "rgba(255, 0, 255, 0.4)",
+        "Orange": "rgba(255, 165, 0, 0.4)",
+        "Purple": "rgba(128, 0, 128, 0.4)",
+        "Pink": "rgba(255, 192, 203, 0.3)",
+        "Brown": "rgba(165, 42, 42, 0.4)",
+        "Teal": "rgba(0, 128, 128, 0.4)",
+        "Lime": "rgba(0, 255, 0, 0.4)",
+        "Olive": "rgba(128, 128, 0, 0.4)",
+        "Maroon": "rgba(128, 0, 0, 0.4)",
+        "Navy": "rgba(0, 0, 128, 0.4)",
+        "Silver": "rgba(192, 192, 192, 0.4)",
+        "Gray": "rgba(128, 128, 128, 0.4)",
+        "Gold": "rgba(255, 215, 0, 0.4)",
+        "Indigo": "rgba(75, 0, 130, 0.4)",
+        "Violet": "rgba(75, 0, 130, 0.4)",
+        "Turquoise": "rgba(64, 224, 208, 0.4)",
+        "Lavender": "rgba(230, 230, 250, 0.4)",
+        "Salmon": "rgba(250, 128, 114, 0.4)",
+        "SkyBlue": "rgba(135, 206, 235, 0.4)",
+        "LemonChiffon": "rgba(255, 250, 205, 0.4)",
+        "Tomato": "rgba(255, 99, 71, 0.4)",
+        "Orchid": "rgba(218, 112, 214, 0.4)",
+        "SlateGray": "rgba(112, 128, 144, 0.4)",
+        "Thistle": "rgba(216, 191, 216, 0.4)"
+    },
+    // Region Background Extension
+    "background.windowBackgrounds": [],
+    "background.autoInstall": false,
+    "background.backgroundOpacity": [
+        0.1,
+        0.1,
+        0.1,
+        0.1
+    ],
+    "background.editorBackgrounds": [],
+    "background.panelBackgrounds": [],
+    //endregion
+    // Region CodeSnap Extension
+    "codesnap.backgroundColor": "#FFC540",
+    "codesnap.roundedCorners": true,
+    "codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 12px 24px",
+    "codesnap.containerPadding": "0em",
+    "codesnap.showLineNumbers": false,
+    "codesnap.showWindowControls": false,
+    // #Endregion 
+    // Region //TODO Tree
+    "todo-tree.general.tags": [
+        "BUG",
+        "HACK",
+        "FIXME",
+        "TODO",
+        "XXX",
+        "[ ]",
+        "[x]",
+        "README",
+        "REF",
+        "WARN",
+        "BOOKMARK",
+        "throw new NotImplementedException();"
+    ],
+    "todo-tree.general.tagGroups": {
+        "FIXME": [
+            "FIXME",
+            "FIXIT",
+            "FIX",
+            "fix",
+            "Fix",
+            "fixme",
+            "FixMe",
+        ],
+        "TODO": [
+            "TODO",
+            "todo",
+            "Todo",
+            "ToDo"
+        ]
+    },
+    "todo-tree.tree.autoRefresh": true,
+    "todo-tree.highlights.customHighlight": {
+        "TODO": {
+            "icon": "checkbox",
+            "type": "text-and-comment",
+            "gutterIcon": true,
+            "foreground": "#000",
+            "background": "#FFA500",
+            "iconColour": "#FFA500",
+        },
+        "BUG": {
+            "icon": "bug",
+            "type": "tag-and-comment",
+            "foreground": "#ffffff",
+            "background": "#ff3333",
+            "iconColour": "#ff3333",
+            "gutterIcon": true,
+        },
+        "FIXME": {
+            "type": "text-and-comment",
+            "foreground": "#000",
+            "background": "#dc6d35",
+            "iconColour": "#dc6d35",
+            "icon": "flame",
+            "gutterIcon": true,
+        },
+        "XXX": {
+            "type": "text-and-comment",
+            "foreground": "#ffffff",
+            "background": "#b633ff",
+            "iconColour": "#b633ff",
+            "icon": "x",
+            "gutterIcon": true,
+        },
+        "[ ]": {
+            "icon": "issue-opened",
+            "type": "tag",
+            "foreground": "#000",
+            "background": "#33f2ff",
+            "iconColour": "#33f2ff",
+            "gutterIcon": true,
+        },
+        "[x]": {
+            "icon": "issue-closed",
+            "type": "tag",
+            "foreground": "#000",
+            "background": "#8efb08",
+            "iconColour": "#a5fd39",
+            "gutterIcon": true,
+        },
+        "README": {
+            "type": "text-and-comment",
+            "foreground": "#ffffff",
+            "background": "#648843",
+            "iconColour": "#648843",
+            "icon": "book",
+            "gutterIcon": true,
+        },
+        "REF": {
+            "type": "text-and-comment",
+            "foreground": "#ffffff",
+            "background": "#3466ff",
+            "iconColour": "#3466ff",
+            "icon": "link",
+            "gutterIcon": true,
+        },
+        "WARN": {
+            "type": "text-and-comment",
+            "foreground": "#ffffff",
+            "background": "#ba044e",
+            "iconColour": "#ba044e",
+            "icon": "alert",
+            "gutterIcon": true,
+        },
+        "HACK": {
+            "type": "text-and-comment",
+            "foreground": "#ffffff",
+            "background": "#ba044e",
+            "iconColour": "#ba044e",
+            "icon": "zap",
+            "gutterIcon": true,
+        },
+        "BOOKMARK": {
+            "type": "tag",
+            "foreground": "#ffffff",
+            "background": "#047bba",
+            "iconColour": "#047bba",
+            "icon": "bookmark",
+            "gutterIcon": true,
+        },
+        "throw new NotImplementedException();": {
+            "type": "tag",
+            "foreground": "#ffffff",
+            "background": "#047bba",
+            "iconColour": "#047bba",
+            "icon": "goal",
+            "gutterIcon": true,
+        },
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "window.commandCenter": false,
+    "maui.configuration.androidSdkPreferredPath": "C:\\Program Files (x86)\\Android\\android-sdk",
+    "maui.configuration.javaSdkPreferredPath": "C:\\Program Files (x86)\\Android\\openjdk\\jdk-17.0.12",
+    "vs-kubernetes": {
+        "vscode-kubernetes.helm-path-windows": "C:\\Users\\nour3\\.vs-kubernetes\\tools\\helm\\windows-amd64\\helm.exe",
+        "vscode-kubernetes.kubectl-path-windows": "C:\\Users\\nour3\\.vs-kubernetes\\tools\\kubectl\\kubectl.exe",
+        "vscode-kubernetes.minikube-path-windows": "C:\\Users\\nour3\\.vs-kubernetes\\tools\\minikube\\windows-amd64\\minikube.exe"
+    },
+    "workbench.iconTheme": "vs-trae-seti",
+    "liveServer.settings.donotVerifyTags": true,
+    "liveServer.settings.donotShowInfoMsg": true,
+    "markdown-pdf.headerTemplate": "",
+    "markdown-pdf.highlightStyle": "dark.css",
+    "markdown-pdf.breaks": true,
+    "markdown-pdf.displayHeaderFooter": false,
+    "database-client.autoSync": true,
+    "workbench.productIconTheme": "icons-carbon",
+    //endregion
+    "workbench.colorTheme": "Default Dark+",
+    "window.titleBarStyle": "custom",
+    "editor.scrollbar.vertical": "visible",
+    "editor.scrollbar.horizontal": "visible",
+    "editor.scrollbar.verticalScrollbarSize": 8,
+    "editor.scrollbar.horizontalScrollbarSize": 8,
+    "breadcrumbs.showFiles": true,
+    "breadcrumbs.showArrays": false,
+    "breadcrumbs.showBooleans": false,
+    "breadcrumbs.showConstants": false,
+    "breadcrumbs.showClasses": false,
+    "breadcrumbs.showConstructors": false,
+    "breadcrumbs.showEnumMembers": false,
+    "breadcrumbs.showEnums": false,
+    "breadcrumbs.showEvents": false,
+    "breadcrumbs.showFields": false,
+    "breadcrumbs.showFunctions": false,
+    "breadcrumbs.showInterfaces": false,
+    "breadcrumbs.showKeys": false,
+    "breadcrumbs.showMethods": false,
+    "breadcrumbs.showModules": false,
+    "breadcrumbs.showNamespaces": false,
+    "breadcrumbs.showNull": false,
+    "breadcrumbs.showNumbers": false,
+    "breadcrumbs.showObjects": false,
+    "breadcrumbs.showOperators": false,
+    "breadcrumbs.showPackages": false,
+    "breadcrumbs.showProperties": false,
+    "breadcrumbs.showStrings": false,
+    "breadcrumbs.showStructs": false,
+    "breadcrumbs.showTypeParameters": false,
+    "breadcrumbs.showVariables": false,
+    "workbench.colorCustomizations": {
+        // ACTIVITY BAR
+        "activityBar.background": "#181A1F",
+        "activityBar.foreground": "#ffffff",
+        "activityBar.inactiveForeground": "#a9a9a9",
+        "activityBar.border": "#24262B",
+        // SIDEBAR (Explorer)
+        "sideBar.background": "#181A1F",
+        "sideBar.foreground": "#ffffff",
+        "sideBarSectionHeader.background": "#181A1F",
+        "sideBarSectionHeader.foreground": "#ffffff",
+        "sideBar.border": "#24262B",
+        // BREADCRUMBS
+        "breadcrumb.foreground": "#aaaaaa",
+        "breadcrumb.background": "#181A1F",
+        "breadcrumb.focusForeground": "#ffffff",
+        "breadcrumb.activeSelectionForeground": "#ffffff",
+        "breadcrumbPicker.background": "#181A1F",
+        "breadcrumbIcon.foreground": "#aaaaaa",
+        // TITLE BAR
+        "titleBar.activeBackground": "#181A1F",
+        "titleBar.activeForeground": "#ffffff",
+        "titleBar.inactiveBackground": "#181A1F",
+        "titleBar.inactiveForeground": "#cccccc",
+        "titleBar.border": "#24262B",
+        // STATUS BAR
+        "statusBar.background": "#181A1F",
+        "statusBar.foreground": "#ffffff",
+        "statusBar.border": "#24262B",
+        "statusBar.noFolderBackground": "#181A1F",
+        "statusBar.debuggingBackground": "#24262B",
+        // EDITOR & TABS
+        "editor.background": "#181A1F",
+        "editor.foreground": "#ffffff",
+        "editorGroup.border": "#24262B",
+        "editorGroupHeader.tabsBackground": "#181A1F",
+        "editorGroupHeader.tabsBorder": "#24262B",
+        // Highlight the active tab with #30343F
+        "tab.activeBackground": "#30343F",
+        "tab.activeForeground": "#ffffff",
+        "tab.inactiveBackground": "#181A1F",
+        "tab.inactiveForeground": "#aaaaaa",
+        "tab.border": "#24262B",
+        // PANELS
+        "panel.background": "#181A1F",
+        "panel.foreground": "#ffffff",
+        "panel.border": "#24262B",
+        // SCROLLBARS
+        "scrollbarSlider.background": "#3A3D41",
+        "scrollbarSlider.hoverBackground": "#484b50",
+        "scrollbarSlider.activeBackground": "#606366",
+        // OPTIONAL CONTRAST TWEAKS
+        "editorLineNumber.foreground": "#8b8b8b",
+        "editor.selectionBackground": "#3A3D41",
+        "editorCursor.foreground": "#ffffff",
+        // Optional: borders, placeholder text, etc.
+        "input.border": "#24262B",
+        "input.placeholderForeground": "#aaaaaa",
+        // If you also want to style the “dropdown” portions (e.g. pickers):
+        "dropdown.background": "#30343F",
+        "dropdown.foreground": "#FFFFFF",
+        // Gutter (line numbers, breakpoints, etc.) background
+        // Make it a shade lighter/darker so the boundary stands out
+        "editorGutter.background": "#16181D",
+        // QUICK INPUT PANEL (the background and text color of the entire pop-up)
+        "quickInput.background": "#181A1F",
+        "quickInput.foreground": "#FFFFFF",
+        // If you want the "input" portion (top text box) to match:
+        "input.background": "#30343F",
+        "input.foreground": "#FFFFFF",
+        // LIST SELECTION COLORS (these are crucial for showing the "cursor")
+        // The item your arrow key is currently on:
+        "list.focusBackground": "#30343F",
+        "list.focusForeground": "#FFFFFF",
+        // Optionally, the item you’ve clicked or activated:
+        "list.activeSelectionBackground": "#30343F",
+        "list.activeSelectionForeground": "#FFFFFF",
+        // Hover color if you want a highlight when you mouse over items:
+        "list.hoverBackground": "#24262B",
+        "list.hoverForeground": "#FFFFFF",
+        // Optional: color for non-focused, inactive selections
+        "list.inactiveSelectionBackground": "#24262B",
+        "list.inactiveSelectionForeground": "#AAAAAA",
+        // The global focus border used in many widgets (input boxes, quick pick, etc.)
+        "focusBorder": "#00000000",
+        // Specifically remove the focus border from text inputs
+        "input.focusBorder": "#00000000",
+        // Remove focus outline from buttons
+        "button.focusBorder": "#00000000",
+        // Remove focus outline from dropdowns
+        "dropdown.focusBorder": "#00000000",
+        // Remove focus outline from list/tree items (e.g., in the Explorer or Quick Pick)
+        "list.focusOutline": "#00000000",
+        "list.inactiveFocusOutline": "#00000000"
+    }
+}

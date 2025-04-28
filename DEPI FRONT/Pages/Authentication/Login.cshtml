@@ -1,0 +1,118 @@
+@page
+@model LoginModel
+@{
+
+    Layout = "_CommonMasterLayout";
+
+    ViewData["Title"] = "Sign In";
+}
+
+@section PageStyles { 
+ <link rel="stylesheet" href="~/css/app.min.css"> 
+} 
+<!-- Toast Container -->
+@if (!Model.ApiResponse.Succeeded && Model.ApiResponse.Message != null)
+{
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div id="liveToastError" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header bg-danger text-white">
+                <i class="bi bi-exclamation-circle-fill me-2"></i> <!-- Error icon -->
+                <strong class="me-auto">Error</strong>
+                <small>Just now</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body text-danger">
+				@Model.ApiResponse.Message 
+            </div>
+        </div>
+    </div>
+
+    <!-- Script to show the toast -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const toastEl = document.getElementById('liveToastError');
+            if (toastEl) {
+                const toast = new bootstrap.Toast(toastEl);
+                toast.show();
+            }
+        });
+    </script>
+}
+@* ************** Content ************** *@
+<div class="d-flex flex-column h-100 p-3">
+    <div class="d-flex flex-column flex-grow-1">
+        <div class="row h-100">
+            <div class="col-xxl-7">
+                <div class="row justify-content-center h-100">
+                    <div class="col-lg-6 py-lg-5">
+                        <div class="d-flex flex-column h-100 justify-content-center">
+                            <div class="auth-logo mb-4">
+                                <a href="index.html" class="logo-dark">
+                                    @* @TempData.Peek("appName") *@
+                                    <img src="~/images/logo-dark.png" height="24" alt="logo dark">
+                                </a>
+
+                                <a href="/" class="logo-light">
+                                    <img src="~/images/logo-light.png" height="24" alt="logo light">
+                                </a>
+                            </div>
+
+                            <h2 class="fw-bold fs-24">Sign In</h2>
+
+                            <p class="text-muted mt-1 mb-4">Enter your email address and password to access admin panel.</p>
+
+                            <div class="mb-5">
+                                <form method="post">
+                                    <div class="mb-3">
+                                        <label class="form-label" for="example-email">Email</label>
+                                        <input type="email" id="email" name="Email" class="form-control bg-" asp-for="Login.email" placeholder="Enter your email" required>
+                                        <span asp-validation-for="Login.email" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <a href="~/Authentication/ResetPassword" class="float-end text-muted text-unline-dashed ms-1">Reset password</a>
+                                        <label class="form-label" for="example-password">Password</label>
+                                        <input type="password" id="password" name="password" class="form-control" asp-for="Login.password" placeholder="Enter your password" required>
+                                        <span asp-validation-for="Login.password" class="text-danger"></span>
+                                    </div>
+                                    <div class="mb-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="checkbox-signin">
+                                            <label class="form-check-label" for="checkbox-signin">Remember me</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-1 text-center d-grid">
+                                        <button class="btn btn-soft-primary" type="submit">Sign In</button>
+                                    </div>
+                                </form>
+
+                                <p class="mt-3 fw-semibold no-span">OR sign with</p>
+
+                                <div class="d-grid gap-2">
+                                    <a href="javascript:void(0);" class="btn btn-soft-dark"><i class="bx bxl-google fs-20 me-1"></i> Sign in with Google</a>
+                                    <a href="javascript:void(0);" class="btn btn-soft-primary"><i class="bx bxl-facebook fs-20 me-1"></i> Sign in with Facebook</a>
+                                </div>
+                            </div>
+
+                            <p class="text-danger text-center">Don't have an account? <a href="~/Authentication/Register" class="text-dark fw-bold ms-1">Sign Up</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xxl-5 d-none d-xxl-flex">
+                <div class="card h-100 mb-0 overflow-hidden">
+                    <div class="d-flex flex-column h-100">
+                        <img src="~/images/small/img-10.jpg" alt="" class="w-100 h-100">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Vendor Javascript (Require in all Page) -->
+<script src="~/js/vendor.js"></script>
+
+<!-- App Javascript (Require in all Page) -->
+<script src="~/js/app.js"></script>

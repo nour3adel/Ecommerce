@@ -1,0 +1,628 @@
+﻿@page
+@model Ecommerce.Frontend.Pages.Products.product_addModel
+@{
+
+    Layout = "_AdminLayout";
+    ViewData["Title"] = "Product Add";
+    ViewData["navlogo"] = "PRODUCT ADD";
+}
+
+
+
+@section PageStyles {
+    <link rel="stylesheet" href="~/css/app.min.css">
+}
+<style>
+    /* Custom color classes */
+    .text-orange {
+        color: orange !important;
+    }
+
+    .text-purple {
+        color: purple !important;
+    }
+
+    .text-pink {
+        color: pink !important;
+    }
+
+    .text-black {
+        color: black !important;
+    }
+
+    .text-brown {
+        color: saddlebrown !important;
+    }
+    /* Style for the dropzone-like container */
+    .dropzone-style {
+        border: 2px dashed #e0e0e0;
+        border-radius: 5px;
+        padding: 50px 20px;
+        text-align: center;
+        cursor: pointer;
+        transition: border-color 0.3s ease;
+    }
+
+        .dropzone-style:hover {
+            border-color: #007bff;
+        }
+
+    .dz-message {
+        color: #6c757d;
+    }
+
+        .dz-message i {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+    /* Hide the default file input */
+    #product-images {
+        display: none;
+    }
+
+    /* Style for file previews */
+    #file-preview li {
+        margin-top: 10px;
+    }
+
+    #file-preview .border {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        background: #f9f9f9;
+    }
+
+    #file-preview .avatar-sm {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+
+    #file-preview h5 {
+        font-size: 14px;
+        margin-bottom: 0;
+    }
+
+    #file-preview p {
+        font-size: 12px;
+        color: #6c757d;
+        margin-bottom: 0;
+    }
+
+    #file-preview button {
+        font-size: 12px;
+        padding: 5px 10px;
+    }
+</style>
+<!-- ==================================================== -->
+<!-- Start right Content here -->
+<!-- ==================================================== -->
+<div class="page-content">
+
+
+    @if (Model.ModelState.ErrorCount > 0)
+    {
+        <div class="alert alert-danger mt-3">
+            <ul>
+                @foreach (var error in Model.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
+    }
+    <!-- Start Container Fluid -->
+    <div class="container-xxl">
+
+        <div class="row">
+            @* <div class="col-xl-3 col-lg-4"> *@
+            @*     <div class="card"> *@
+            @*         <div class="card-body"> *@
+            @*             <img src="~/images/product/p-1.png" alt="" class="img-fluid rounded bg-light"> *@
+            @*             <div class="mt-3"> *@
+            @*                 <h4>Men Black Slim Fit T-shirt <span class="fs-14 text-muted ms-1">(Fashion)</span></h4> *@
+            @*                 <h5 class="text-dark fw-medium mt-3">Price :</h5> *@
+            @*                 <h4 class="fw-semibold text-dark mt-2 d-flex align-items-center gap-2"> *@
+            @*                     <span class="text-muted text-decoration-line-through">$100</span> $80 <small class="text-muted"> (30% Off)</small> *@
+            @*                 </h4> *@
+            @*                 <div class="mt-3"> *@
+            @*                     <h5 class="text-dark fw-medium">Size :</h5> *@
+            @*                     <div class="d-flex flex-wrap gap-2" role="group" aria-label="Basic checkbox toggle button group"> *@
+            @*                         <input type="checkbox" class="btn-check" id="size-s"> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="size-s">S</label> *@
+
+            @*                         <input type="checkbox" class="btn-check" id="size-m" checked> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="size-m">M</label> *@
+
+            @*                         <input type="checkbox" class="btn-check" id="size-xl"> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="size-xl">Xl</label> *@
+
+            @*                         <input type="checkbox" class="btn-check" id="size-xxl"> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="size-xxl">XXL</label> *@
+
+            @*                     </div> *@
+            @*                 </div> *@
+            @*                 <div class="mt-3"> *@
+            @*                     <h5 class="text-dark fw-medium">Colors :</h5> *@
+            @*                     <div class="d-flex flex-wrap gap-2" role="group" aria-label="Basic checkbox toggle button group"> *@
+            @*                         <input type="checkbox" class="btn-check" id="color-dark"> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-dark"> <i class="bx bxs-circle fs-18 text-dark"></i></label> *@
+
+            @*                         <input type="checkbox" class="btn-check" id="color-yellow"> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-yellow"> <i class="bx bxs-circle fs-18 text-warning"></i></label> *@
+
+            @*                         <input type="checkbox" class="btn-check" id="color-white"> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-white"> <i class="bx bxs-circle fs-18 text-white"></i></label> *@
+
+            @*                         <input type="checkbox" class="btn-check" id="color-red"> *@
+            @*                         <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-red"> <i class="bx bxs-circle fs-18 text-danger"></i></label> *@
+
+            @*                     </div> *@
+            @*                 </div> *@
+            @*             </div> *@
+            @*         </div> *@
+            @*         <div class="card-footer bg-light-subtle"> *@
+            @*             <div class="row g-2"> *@
+            @*                 <div class="col-lg-6"> *@
+            @*                     <a href="#!" class="btn btn-outline-secondary w-100">Create Product</a> *@
+            @*                 </div> *@
+            @*                 <div class="col-lg-6"> *@
+            @*                     <a href="#!" class="btn btn-primary w-100">Cancel</a> *@
+            @*                 </div> *@
+            @*             </div> *@
+            @*         </div> *@
+            @*     </div> *@
+            @* </div> *@
+
+            @* <div class="col-xl-9 col-lg-8 "> *@
+
+
+
+       <div class="col-xl-12 col-lg-12 ">
+                <!-- Form 2: Product Details -->
+            <form method="post" enctype="multipart/form-data">
+              
+                    <!-- Card: Add Product Photo -->
+                    <!-- Card: Add Product Photo -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Add Product Photo</h4>
+                        </div>
+                        <div class="card-body">
+                            <!-- Styled File Input -->
+                            <div class="dropzone-style" id="custom-dropzone">
+                                <input type="file"
+                                       asp-for="Product.ImageFiles"
+                                       name="Product.ImageFiles"
+                                       multiple="multiple"
+                                       class="form-control d-none"
+                                       id="product-images"
+                                       accept="image/*" />
+                                <div class="fallback dz-message needsclick">
+                                    <i class="bx bx-cloud-upload fs-48 text-primary"></i>
+                                    <h3 class="mt-4">Drop your images here, or <span class="text-primary">click to browse</span></h3>
+                                    <span class="text-muted fs-13">
+                                        1600 x 1200 (4:3) recommended. PNG, JPG and GIF files are allowed
+                                    </span>
+                                </div>
+                            </div>
+
+                            <!-- File Preview -->
+                            <ul class="list-unstyled mb-0" id="file-preview">
+                                <!-- File previews will be dynamically added here -->
+                            </ul>
+                        </div>
+                    </div>
+
+                <!-- Card: Product Information -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Product Information</h4>
+                    </div>
+                    <div class="card-body">
+               
+                        <div class="row mb-2">
+                            <div class="col-lg-6">
+                               
+                                    <div class="mb-3">
+                                        <label for="product-name" class="form-label">Product Name</label>
+                                        <input type="text" id="product-name" class="form-control" placeholder="Items Name" asp-for="Product.Name">
+                                        <span asp-validation-for="Product.Name" class="text-danger"></span>
+
+                                    </div>
+                               
+                            </div>
+                                <div class="col-lg-6">
+                                    <label for="product-categories" class="form-label">Product Categories</label>
+                                    <select asp-for="Product.CategoryId" class="form-control" id="product-categories" data-choices data-placeholder="Select Category">
+                                        <option value="">Choose a category</option>
+                                        @if (Model.Categories?.Data != null)
+                                        {
+                                            foreach (var category in Model.Categories.Data)
+                                            {
+                                                <option value="@category.Id" selected="@(Model.Product.CategoryId == category.Id)">
+                                                    @category.Name
+                                                </option>
+                                            }
+                                        }
+
+                                    </select>
+                                </div>
+                        </div>                    
+                        <div class="row">
+                                <div class="col-lg-6">
+                                        <div class="mb-3">
+                                            <label for="product-stock" class="form-label">Stock</label>
+                                        <input type="number" id="product-stock" class="form-control" placeholder="Quantity" asp-for="Product.StockAmount">
+                                        </div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="product-brands" class="form-label">Product Brand</label>
+                                    <select asp-for="Product.BrandId" class="form-control" id="product-brands" data-choices data-placeholder="Select Brand">
+                                        <option value="">Choose a brand</option>
+                                        @if (Model.Brands?.Data != null){
+                                                    @foreach (var brand in Model.Brands.Data)
+                                                    {
+                                                        <option value="@brand.Id">@brand.Name</option>
+                                                    }
+                                        }
+                                    </select>
+                                </div>
+                        </div>     
+                        
+                        <div class="row mb-4">
+                           
+                            <div class="col-lg-5">
+                                    <div class="mt-3">
+                                        <h5 class="text-dark fw-medium">Colors :</h5>
+                                        <div class="d-flex flex-wrap gap-2" role="group" aria-label="Basic checkbox toggle button group">
+                                            @* Dynamically generate checkboxes for each color *@
+                                            <input type="hidden" asp-for="Product.ColorNames" id="color-names" value="" />
+
+                                            <input type="checkbox" class="btn-check" id="color-dark1" data-color="Dark">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-dark1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Dark")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-yellow1" data-color="Yellow">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-yellow1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Yellow")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-white1" data-color="White">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-white1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("White")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-red1" data-color="Red">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-red1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Red")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-green1" data-color="Green">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-green1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Green")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-blue1" data-color="Blue">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-blue1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Blue")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-sky1" data-color="Cyan">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-sky1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Cyan")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-gray1" data-color="Gray">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-gray1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Gray")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-orange1" data-color="Orange">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-orange1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Orange")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-purple1" data-color="Purple">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-purple1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Purple")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-pink1" data-color="Pink">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-pink1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Pink")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-black1" data-color="Black">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-black1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Black")"></i>
+                                            </label>
+
+                                            <input type="checkbox" class="btn-check" id="color-brown1" data-color="Brown">
+                                            <label class="btn btn-light avatar-sm rounded d-flex justify-content-center align-items-center" for="color-brown1">
+                                                <i class="bx bxs-circle fs-18 @GetColorClass("Brown")"></i>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="mb-3">
+
+                                    <label for="description" class="form-label">Description</label>
+                                    <textarea class="form-control bg-light-subtle" id="description" rows="7" placeholder="Short description about the product" asp-for="Product.Description"></textarea>
+                                </div>
+                            </div>
+                        </div>
+
+                    
+                    
+                    </div>
+                </div>
+
+                    <!-- Card: Pricing Details -->
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Pricing Details</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                            
+                                    <label for="product-price" class="form-label">Price</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text fs-20"><i class='bx bx-dollar'></i></span>
+                                        <input type="number" id="product-price" class="form-control" placeholder="000" asp-for="Product.Price">
+                                    </div>
+                            
+                            </div>
+                            <div class="col-lg-6">
+                              
+                                    <label for="product-discount" class="form-label">Discount</label>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text fs-20"><i class='bx bxs-discount'></i></span>
+                                        <input type="number" id="product-discount" class="form-control" placeholder="000" asp-for="Product.DiscountPercentage">
+                                    </div>
+                             
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+            
+                    <!-- Submit Buttons -->
+                <div class="p-3 bg-light mb-3 rounded">
+                    <div class="row justify-content-end g-2">
+                        <div class="col-lg-2">
+                            <button id="submit-product" type="submit" class="btn btn-outline-secondary w-100">Create Product</button>
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#!" class="btn btn-primary w-100">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+        
+        
+        
+        </div>
+    </div>
+    <!-- End Container Fluid -->
+    @* <!-- ========== Footer Start ========== --> *@
+    @await Html.PartialAsync("Sections/Footer")
+
+    @* <!-- ========== Footer End ========== --> *@
+
+</div>
+<!-- ==================================================== -->
+<!-- End Page Content -->
+<!-- ==================================================== -->
+
+
+
+<!-- Vendor Javascript (Require in all Page) -->
+<script src="~/js/vendor.js"></script> 
+
+@* <!-- App Javascript (Require in all Page) --> *@
+<script src="~/js/app.js"></script>
+
+<script>
+    // Get references to elements
+    const dropzoneStyle = document.getElementById('custom-dropzone');
+    const fileInput = document.getElementById('product-images');
+    const filePreview = document.getElementById('file-preview');
+
+    // Add click event to trigger file input
+    dropzoneStyle.addEventListener('click', function () {
+        fileInput.click(); // Trigger the file input when the styled container is clicked
+    });
+
+    // Handle file selection and generate previews
+    fileInput.addEventListener('change', function (event) {
+        const files = event.target.files;
+
+        // Clear previous previews
+        filePreview.innerHTML = '';
+
+        // Generate previews for each selected file
+        for (let i = 0; i < files.length; i++) {
+            const file = files[i];
+
+            // Create a list item for the preview
+            const li = document.createElement('li');
+            li.classList.add('mt-2');
+
+            // Create the preview container
+            const previewDiv = document.createElement('div');
+            previewDiv.classList.add('border', 'rounded');
+
+            // Create the flex container
+            const flexDiv = document.createElement('div');
+            flexDiv.classList.add('d-flex', 'p-2');
+
+            // Create the thumbnail container
+            const thumbnailDiv = document.createElement('div');
+            thumbnailDiv.classList.add('flex-shrink-0', 'me-3');
+
+            const avatarDiv = document.createElement('div');
+            avatarDiv.classList.add('avatar-sm', 'bg-light', 'rounded');
+
+            const img = document.createElement('img');
+            img.src = URL.createObjectURL(file); // Generate a temporary URL for the file
+            img.alt = file.name;
+            img.classList.add('img-fluid', 'rounded', 'd-block');
+            avatarDiv.appendChild(img);
+            thumbnailDiv.appendChild(avatarDiv);
+
+            // Create the details container
+            const detailsDiv = document.createElement('div');
+            detailsDiv.classList.add('flex-grow-1');
+
+            const detailsInnerDiv = document.createElement('div');
+            detailsInnerDiv.classList.add('pt-1');
+
+            const fileName = document.createElement('h5');
+            fileName.textContent = file.name;
+            fileName.classList.add('fs-14', 'mb-1');
+            detailsInnerDiv.appendChild(fileName);
+
+            const fileSize = document.createElement('p');
+            fileSize.textContent = `${(file.size / 1024).toFixed(2)} KB`;
+            fileSize.classList.add('fs-13', 'text-muted', 'mb-0');
+            detailsInnerDiv.appendChild(fileSize);
+
+            detailsDiv.appendChild(detailsInnerDiv);
+
+            // Create the remove button container
+            const removeButtonDiv = document.createElement('div');
+            removeButtonDiv.classList.add('flex-shrink-0', 'ms-3');
+
+            const removeButton = document.createElement('button');
+            removeButton.textContent = 'Delete';
+            removeButton.classList.add('btn', 'btn-sm', 'btn-danger');
+            removeButton.dataset.dzRemove = true;
+            removeButton.addEventListener('click', function () {
+                // Remove the file from the input
+                const dataTransfer = new DataTransfer();
+                Array.from(fileInput.files).forEach(f => {
+                    if (f.name !== file.name) {
+                        dataTransfer.items.add(f);
+                    }
+                });
+                fileInput.files = dataTransfer.files;
+
+                // Remove the preview
+                li.remove();
+            });
+            removeButtonDiv.appendChild(removeButton);
+
+            // Append all parts to the flex container
+            flexDiv.appendChild(thumbnailDiv);
+            flexDiv.appendChild(detailsDiv);
+            flexDiv.appendChild(removeButtonDiv);
+
+            // Append the flex container to the preview container
+            previewDiv.appendChild(flexDiv);
+
+            // Append the preview container to the list item
+            li.appendChild(previewDiv);
+
+            // Append the list item to the preview list
+            filePreview.appendChild(li);
+        }
+    });
+
+    // Handle drag-and-drop
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        dropzoneStyle.addEventListener(eventName, e => {
+            e.preventDefault();
+            e.stopPropagation();
+        }, false);
+    });
+
+    dropzoneStyle.addEventListener('drop', function (e) {
+        const files = e.dataTransfer.files;
+
+        // Add dropped files to the hidden file input
+        if (files.length > 0) {
+            const dataTransfer = new DataTransfer();
+            Array.from(files).forEach(file => dataTransfer.items.add(file));
+            Array.from(fileInput.files).forEach(file => dataTransfer.items.add(file));
+            fileInput.files = dataTransfer.files;
+
+            // Trigger change event to generate previews
+            fileInput.dispatchEvent(new Event('change'));
+        }
+    });
+
+    // Highlight the dropzone on dragover
+    dropzoneStyle.addEventListener('dragover', function () {
+        dropzoneStyle.classList.add('highlight');
+    });
+
+    // Remove highlight on dragleave or drop
+    ['dragleave', 'drop'].forEach(eventName => {
+        dropzoneStyle.addEventListener(eventName, function () {
+            dropzoneStyle.classList.remove('highlight');
+        });
+    });
+
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const colorNamesInput = document.getElementById("color-names");
+
+        // Function to update the hidden input with selected colors as a comma-separated string
+        function updateColorNames() {
+            const selectedColors = Array.from(document.querySelectorAll(".btn-check:checked"))
+                .map(checkbox => checkbox.dataset.color);
+
+            // Join the selected colors into a single comma-separated string
+            colorNamesInput.value = selectedColors.join(",");
+        }
+
+        // Attach change event listeners to all checkboxes
+        document.querySelectorAll(".btn-check").forEach(checkbox => {
+            checkbox.addEventListener("change", updateColorNames);
+        });
+
+        // Initialize the hidden input with any pre-selected colors (if applicable)
+        updateColorNames();
+    });
+
+</script>
+
+@functions {
+    public string GetColorClass(string color)
+    {
+        if (string.IsNullOrWhiteSpace(color))
+            return "text-secondary";
+
+        var normalizedColor = color.Trim().ToLower();
+
+        return normalizedColor switch
+        {
+            "yellow" => "text-warning",
+            "white" => "text-white",
+            "green" => "text-success",
+            "blue" => "text-primary", // Updated: Blue maps to primary
+            "red" => "text-danger",
+            "orange" => "text-orange", // New: Orange
+            "purple" => "text-purple", // New: Purple
+            "pink" => "text-pink",   // New: Pink
+            "gray" => "text-secondary",
+            "black" => "text-black",  // New: Black
+            "brown" => "text-brown",  // New: Brown
+            "cyan" => "text-info",   // New: Cyan maps to info
+            _ when normalizedColor.StartsWith("#") => $"text-{normalizedColor}", // Hex codes
+            _ => "text-secondary" // Fallback for unrecognized colors
+        };
+    }
+}
